@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Menu</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f7; 
+            font-family: 'Georgia', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-nav {
+            background-color: #1a2a3a; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            padding: 0 20px; 
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            width: 100%;
+            /* Moved back to the left */
+            justify-content: flex-start; 
+            align-items: center;
+            height: 120px; 
+            overflow: visible; 
+        }
+
+        .logo-container {
+            /* Small margin so the Home button sits close to the logo */
+            margin-right: 0px; 
+        }
+
+        .logo-container img {
+            height: 180px;
+            width: auto;
+            display: block;
+            filter: drop-shadow(0 0-10px rgba(255,255,255,0.2));
+        }
+
+        .nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            /* Negative margin pulls the list closer to the logo area */
+            margin-left: -10px; 
+            gap: 0px;
+            align-items: center;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        /* Styling for Home and About text links if images are missing */
+        .nav-link-direct {
+            text-decoration: none;
+            color: #ffcc00;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 0 15px;
+            transition: transform 0.3s ease;
+            display: block;
+        }
+
+        .nav-category-trigger img, .nav-link-direct img {
+            height: 150px; 
+            width: auto;
+            display: block;
+            margin: -15px -15px; 
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 90px; 
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ffcc00; 
+            min-width: 120px;
+            list-style: none;
+            padding: 5px 0;
+            margin: 0;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            border-radius: 8px;
+            display: none; 
+            z-index: 2000;
+            border: 2px solid #d4a017;
+        }
+
+        .dropdown li a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #1a2a3a; 
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .nav-item:hover .dropdown {
+            display: block;
+        }
+
+        .nav-item:hover img, .nav-item:hover .nav-link-direct {
+            transform: scale(1.1);
+        }
+
+        .envelope-wrapper {
+            margin-top: 50px;
+            width: 384px; 
+            height: auto;
+            aspect-ratio: 3/2; 
+            background-image: url('cover.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .home-text {
+            margin-top: 20px;
+            font-size: 100px;
+            font-weight: bold;
+            color: #1a2a3a; 
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            text-shadow: 2px 2px 0px #ffcc00;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="main-nav">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo">
+        </div>
+
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link-direct">
+                    <img src="home-button.png" alt="HOME" onerror="this.style.display='none'">
+                    HOME
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <div class="nav-category-trigger">
+                    <img src="Untitled design (3) (5).png" alt="Editorial">
+                </div>
+                <ul class="dropdown">
+                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Tab 1</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Tab 2</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <div class="nav-category-trigger">
+                    <img src="Untitled design (3) (6).png" alt="Feature">
+                </div>
+                <ul class="dropdown">
+                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Tab 1</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Tab 2</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <div class="nav-category-trigger">
+                    <img src="Untitled design (3) (7).png" alt="Opinion">
+                </div>
+                <ul class="dropdown">
+                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Tab 1</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Tab 2</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="nav-link-direct">
+                    <img src="about-us-button.png" alt="ABOUT" onerror="this.style.display='none'">
+                    ABOUT
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="envelope-wrapper"></div>
+    <div class="home-text">HOME</div>
+
+</body>
+</html>
