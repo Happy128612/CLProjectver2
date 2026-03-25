@@ -13,34 +13,39 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            height: 100vh;
+            overflow: hidden; 
         }
 
         .main-nav {
-            background-color: #1a2a3a; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            padding: 0 20px; 
+            background-color: #cfc4bc; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 0 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
             display: flex;
             width: 100%;
-            /* Moved back to the left */
             justify-content: flex-start; 
             align-items: center;
-            height: 120px; 
-            overflow: visible; 
+            /* Shrunk from 120px to 100px */
+            height: 100px; 
+            box-sizing: border-box;
+            flex-wrap: nowrap; 
         }
 
         .logo-container {
-            /* Small margin so the Home button sits close to the logo */
-            margin-right: 0px; 
+            margin-right: 5px; 
+            flex-shrink: 0;
         }
 
         .logo-container img {
-            height: 180px;
+            /* Adjusted logo to fit the smaller bar better */
+            height: 140px; 
             width: auto;
             display: block;
-            filter: drop-shadow(0 0-10px rgba(255,255,255,0.2));
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+            transition: transform 0.3s ease;
         }
 
         .nav-list {
@@ -48,89 +53,48 @@
             margin: 0;
             padding: 0;
             display: flex;
-            /* Negative margin pulls the list closer to the logo area */
-            margin-left: -10px; 
-            gap: 0px;
+            gap: 0px; 
             align-items: center;
+            flex-wrap: nowrap;
         }
 
         .nav-item {
-            position: relative;
+            flex-shrink: 0;
         }
 
-        /* Styling for Home and About text links if images are missing */
-        .nav-link-direct {
-            text-decoration: none;
-            color: #ffcc00;
-            font-weight: bold;
-            font-size: 16px;
-            padding: 0 15px;
-            transition: transform 0.3s ease;
+        .nav-link {
             display: block;
+            text-decoration: none;
+            /* Adjusted to keep the large buttons centered in the smaller bar */
+            transform: translateY(2px); 
         }
 
-        .nav-category-trigger img, .nav-link-direct img {
-            height: 150px; 
+        .nav-link img {
+            height: 200px; /* Keeping buttons large as requested */
             width: auto;
             display: block;
-            margin: -15px -15px; 
+            margin: 0 -15px; 
             transition: transform 0.3s ease;
         }
 
-        .dropdown {
-            position: absolute;
-            top: 90px; 
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #ffcc00; 
-            min-width: 120px;
-            list-style: none;
-            padding: 5px 0;
-            margin: 0;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-            border-radius: 8px;
-            display: none; 
-            z-index: 2000;
-            border: 2px solid #d4a017;
-        }
-
-        .dropdown li a {
-            display: block;
-            padding: 10px 15px;
-            text-decoration: none;
-            color: #1a2a3a; 
-            font-size: 14px;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .nav-item:hover .dropdown {
-            display: block;
-        }
-
-        .nav-item:hover img, .nav-item:hover .nav-link-direct {
+        .nav-link:hover img {
             transform: scale(1.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo-container a:hover img {
+            transform: scale(1.05);
         }
 
         .envelope-wrapper {
-            margin-top: 50px;
-            width: 384px; 
-            height: auto;
-            aspect-ratio: 3/2; 
+            width: 100%;
+            /* Adjusted calculation for the new 100px navbar */
+            height: calc(100vh - 100px); 
             background-image: url('cover.png');
-            background-size: contain;
+            background-size: cover; 
             background-repeat: no-repeat;
             background-position: center;
-        }
-
-        .home-text {
-            margin-top: 20px;
-            font-size: 100px;
-            font-weight: bold;
-            color: #1a2a3a; 
-            text-transform: uppercase;
-            letter-spacing: 10px;
-            text-shadow: 2px 2px 0px #ffcc00;
         }
     </style>
 </head>
@@ -138,58 +102,39 @@
 
     <nav class="main-nav">
         <div class="logo-container">
-            <img src="logo.png" alt="Logo">
+            <a href="index.html">
+                <img src="logo.png" alt="Logo">
+            </a>
         </div>
 
         <ul class="nav-list">
             <li class="nav-item">
-                <a href="index.html" class="nav-link-direct">
-                    <img src="home-button.png" alt="HOME" onerror="this.style.display='none'">
-                    HOME
+                <a href="editorial.html" class="nav-link">
+                    <img src="Untitled design (3) (5).png" alt="Editorial">
                 </a>
             </li>
 
             <li class="nav-item">
-                <div class="nav-category-trigger">
-                    <img src="Untitled design (3) (5).png" alt="Editorial">
-                </div>
-                <ul class="dropdown">
-                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Tab 1</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Tab 2</a></li>
-                </ul>
-            </li>
-
-            <li class="nav-item">
-                <div class="nav-category-trigger">
+                <a href="feature.html" class="nav-link">
                     <img src="Untitled design (3) (6).png" alt="Feature">
-                </div>
-                <ul class="dropdown">
-                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Tab 1</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Tab 2</a></li>
-                </ul>
+                </a>
             </li>
 
             <li class="nav-item">
-                <div class="nav-category-trigger">
+                <a href="opinion.html" class="nav-link">
                     <img src="Untitled design (3) (7).png" alt="Opinion">
-                </div>
-                <ul class="dropdown">
-                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Tab 1</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Tab 2</a></li>
-                </ul>
+                </a>
             </li>
 
             <li class="nav-item">
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="nav-link-direct">
-                    <img src="about-us-button.png" alt="ABOUT" onerror="this.style.display='none'">
-                    ABOUT
+                <a href="opinion.html" class="nav-link">
+                    <img src="Untitled design (3) (7).png" alt="Opinion 2">
                 </a>
             </li>
         </ul>
     </nav>
 
     <div class="envelope-wrapper"></div>
-    <div class="home-text">HOME</div>
 
 </body>
 </html>
