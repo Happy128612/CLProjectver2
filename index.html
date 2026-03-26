@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navigation Menu</title>
     <style>
+        /* --- SMOOTH SCROLLING --- */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -96,6 +101,35 @@
             background-repeat: no-repeat;
             background-position: center;
         }
+
+        /* Mobile Styles (Phones and Tablets) */
+        @media (max-width: 768px) {
+            .main-nav {
+                height: auto;
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .logo-container img {
+                height: 80px;
+                margin-bottom: 10px;
+            }
+
+            .nav-list {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+
+            .nav-link img {
+                height: 100px;
+                margin: 0 -5px;
+            }
+
+            .envelope-wrapper {
+                height: calc(100vh - 150px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -128,7 +162,7 @@
 
             <li class="nav-item">
                 <a href="about.html" class="nav-link">
-                    <img src="about.png" alt="Opinion 2">
+                    <img src="about.png" alt="About">
                 </a>
             </li>
         </ul>
