@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Menu</title>
+    <title>About Us</title>
     <style>
-        /* --- SMOOTH SCROLLING --- */
-        html {
-            scroll-behavior: smooth;
+        /* --- GLOBAL & SMOOTH SCROLLING --- */
+        html { 
+            scroll-behavior: smooth; 
         }
 
         body {
@@ -23,6 +23,7 @@
             overflow-x: hidden;
         }
 
+        /* --- NAVBAR --- */
         .main-nav {
             background-color: #cfc4bc; 
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
@@ -36,7 +37,7 @@
             align-items: center;
             height: 100px; 
             box-sizing: border-box;
-            flex-wrap: nowrap; 
+            flex-wrap: nowrap;
         }
 
         .logo-container {
@@ -50,6 +51,10 @@
             display: block;
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
             transition: transform 0.3s ease;
+        }
+
+        .logo-container a:hover img {
+            transform: scale(1.05);
         }
 
         .nav-list {
@@ -66,12 +71,6 @@
             flex-shrink: 0;
         }
 
-        .nav-link {
-            display: block;
-            text-decoration: none;
-            transform: translateY(2px); 
-        }
-
         .nav-link img {
             height: 200px; 
             width: auto;
@@ -86,30 +85,26 @@
             z-index: 10;
         }
 
-        .logo-container a:hover img {
-            transform: scale(1.05);
-        }
-
-        .envelope-wrapper {
-            width: 100%;
-            height: calc(100vh - 100px); 
-            background-image: url('cover.png');
-            background-size: cover; 
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        /* --- VIDEO STYLING --- */
-        .video-container {
+        /* --- BODY CONTENT (Stacked Images) --- */
+        .about-container {
             width: 100%; 
-            background-color: #000; 
-            line-height: 0; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
         }
 
-        .video-container video {
-            width: 100%;
+        .about-page-img {
+            width: 100%; 
             height: auto;
             display: block;
+        }
+
+        .flipbook-link {
+            width: 100%;
+            display: block;
+            text-decoration: none;
+            cursor: pointer;
         }
 
         /* Mobile Styles */
@@ -119,25 +114,18 @@
                 flex-direction: column;
                 padding: 10px;
             }
-
             .logo-container img {
                 height: 80px;
                 margin-bottom: 10px;
             }
-
             .nav-list {
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 5px;
             }
-
             .nav-link img {
                 height: 100px;
                 margin: 0 -5px;
-            }
-
-            .envelope-wrapper {
-                height: calc(100vh - 150px);
             }
         }
     </style>
@@ -180,12 +168,14 @@
         </ul>
     </nav>
 
-    <div class="envelope-wrapper"></div>
-
-    <div class="video-container">
-        <video controls preload="metadata">
-            <source src="vid.mp4" type="video/mp4">
-        </video>
+    <div class="about-container">
+        <img src="team.png" alt="Meet the Team" class="about-page-img">
+        
+        <img src="hon.png" alt="Honorary Members" class="about-page-img">
+        
+        <a href="https://heyzine.com/flip-book/a30428675b.html" target="_blank" class="flipbook-link">
+            <img src="aboutbut.png" alt="View Flipbook" class="about-page-img">
+        </a>
     </div>
 
 </body>

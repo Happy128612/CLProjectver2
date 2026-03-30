@@ -19,11 +19,11 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            /* Enable scrolling for the long opinion pieces */
             overflow-y: auto; 
             overflow-x: hidden;
         }
 
+        /* --- NAVBAR --- */
         .main-nav {
             background-color: #cfc4bc; 
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
@@ -51,6 +51,10 @@
             display: block;
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
             transition: transform 0.3s ease;
+        }
+
+        .logo-container a:hover img {
+            transform: scale(1.05);
         }
 
         .nav-list {
@@ -87,11 +91,7 @@
             z-index: 10;
         }
 
-        .logo-container a:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Container for the stacked opinion images */
+        /* --- BODY CONTENT (Stacked Images) --- */
         .opinion-content {
             width: 100%;
             display: flex;
@@ -106,25 +106,22 @@
             display: block;
         }
 
-        /* Mobile Styles (Phones and Tablets) */
+        /* Mobile Styles */
         @media (max-width: 768px) {
             .main-nav {
                 height: auto;
                 flex-direction: column;
                 padding: 10px;
             }
-
             .logo-container img {
                 height: 80px;
                 margin-bottom: 10px;
             }
-
             .nav-list {
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 5px;
             }
-
             .nav-link img {
                 height: 100px;
                 margin: 0 -5px;
@@ -160,6 +157,11 @@
             <li class="nav-item">
                 <a href="about.html" class="nav-link">
                     <img src="about.png" alt="About">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="references.html" class="nav-link">
+                    <img src="about.png" alt="References">
                 </a>
             </li>
         </ul>

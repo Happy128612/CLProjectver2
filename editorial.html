@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Menu</title>
+    <title>Editorial - All Articles</title>
     <style>
         /* --- SMOOTH SCROLLING --- */
         html {
@@ -52,6 +52,10 @@
             transition: transform 0.3s ease;
         }
 
+        .logo-container a:hover img {
+            transform: scale(1.05);
+        }
+
         .nav-list {
             list-style: none;
             margin: 0;
@@ -69,7 +73,6 @@
         .nav-link {
             display: block;
             text-decoration: none;
-            transform: translateY(2px); 
         }
 
         .nav-link img {
@@ -86,33 +89,21 @@
             z-index: 10;
         }
 
-        .logo-container a:hover img {
-            transform: scale(1.05);
-        }
-
-        .envelope-wrapper {
+        .editorial-content {
             width: 100%;
-            height: calc(100vh - 100px); 
-            background-image: url('cover.png');
-            background-size: cover; 
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        /* --- VIDEO STYLING --- */
-        .video-container {
-            width: 100%; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             background-color: #000; 
-            line-height: 0; 
         }
 
-        .video-container video {
+        .article-image {
             width: 100%;
-            height: auto;
+            height: auto; 
             display: block;
         }
 
-        /* Mobile Styles */
+        /* --- MOBILE RESPONSIVE STYLES --- */
         @media (max-width: 768px) {
             .main-nav {
                 height: auto;
@@ -135,9 +126,9 @@
                 height: 100px;
                 margin: 0 -5px;
             }
-
-            .envelope-wrapper {
-                height: calc(100vh - 150px);
+            
+            .nav-link:hover img, .logo-container a:hover img {
+                transform: scale(1.05);
             }
         }
     </style>
@@ -180,12 +171,12 @@
         </ul>
     </nav>
 
-    <div class="envelope-wrapper"></div>
-
-    <div class="video-container">
-        <video controls preload="metadata">
-            <source src="vid.mp4" type="video/mp4">
-        </video>
+    <div class="editorial-content">
+        <img src="1.png" alt="Article 1" class="article-image">
+        <img src="2.png" alt="Article 2" class="article-image">
+        <img src="3.png" alt="Article 3" class="article-image">
+        <img src="4.png" alt="Article 4" class="article-image">
+        <img src="5.png" alt="Article 5" class="article-image">
     </div>
 
 </body>

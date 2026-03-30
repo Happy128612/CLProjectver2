@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Menu</title>
+    <title>Features - CLProject</title>
     <style>
         /* --- SMOOTH SCROLLING --- */
         html {
@@ -19,6 +19,7 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            /* Enable scrolling for the long list of features */
             overflow-y: auto; 
             overflow-x: hidden;
         }
@@ -90,29 +91,23 @@
             transform: scale(1.05);
         }
 
-        .envelope-wrapper {
+        /* Container for the stacked feature images */
+        .features-content {
             width: 100%;
-            height: calc(100vh - 100px); 
-            background-image: url('cover.png');
-            background-size: cover; 
-            background-repeat: no-repeat;
-            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff; /* White background to match article style */
         }
 
-        /* --- VIDEO STYLING --- */
-        .video-container {
-            width: 100%; 
-            background-color: #000; 
-            line-height: 0; 
-        }
-
-        .video-container video {
+        .feature-image {
             width: 100%;
-            height: auto;
+            height: auto; 
             display: block;
+            margin-bottom: 0; 
         }
 
-        /* Mobile Styles */
+        /* Mobile Styles (Phones and Tablets) */
         @media (max-width: 768px) {
             .main-nav {
                 height: auto;
@@ -134,10 +129,6 @@
             .nav-link img {
                 height: 100px;
                 margin: 0 -5px;
-            }
-
-            .envelope-wrapper {
-                height: calc(100vh - 150px);
             }
         }
     </style>
@@ -180,12 +171,13 @@
         </ul>
     </nav>
 
-    <div class="envelope-wrapper"></div>
-
-    <div class="video-container">
-        <video controls preload="metadata">
-            <source src="vid.mp4" type="video/mp4">
-        </video>
+    <div class="features-content">
+        <img src="f1.png" alt="Feature 1" class="feature-image">
+        <img src="f2.png" alt="Feature 2" class="feature-image">
+        <img src="f3.png" alt="Feature 3" class="feature-image">
+        <img src="f4.png" alt="Feature 4" class="feature-image">
+        <img src="f5.png" alt="Feature 5" class="feature-image">
+        <img src="f6.png" alt="Feature 6" class="feature-image">
     </div>
 
 </body>
