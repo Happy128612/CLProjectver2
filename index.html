@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Menu</title>
+    <style>
+        /* --- SMOOTH SCROLLING --- */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f7;
+            font-family: 'Georgia', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .main-nav {
+            background-color: #cfc4bc;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            width: 100%;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100px;
+            box-sizing: border-box;
+            flex-wrap: nowrap;
+        }
+
+        .logo-container {
+            margin-right: 5px;
+            flex-shrink: 0;
+        }
+
+        .logo-container img {
+            height: 140px;
+            width: auto;
+            display: block;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+            transition: transform 0.3s ease;
+        }
+
+        .nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 0px;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .nav-item {
+            flex-shrink: 0;
+        }
+
+        .nav-link {
+            display: block;
+            text-decoration: none;
+        }
+
+        /* Standard sizing for main nav icons */
+        .nav-link img {
+            height: 200px;
+            width: auto;
+            display: block;
+            margin: 0 -15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* --- UPDATED REFERENCE IMAGE CONTROL --- */
+        .nav-link img.ref-img {
+            height: auto;
+            width: 145px;
+            margin: 0 10px;
+            /* Keeps the image aligned while scale() stays centered */
+            padding-bottom: 0px;
+            transform: none;
+            transition: transform 0.3s ease;
+        }
+
+        /* Unified hover effect for all buttons */
+        .nav-link:hover img {
+            transform: scale(1.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Hover effect specific to ref-img if needed (already covered by general hover) */
+        .nav-link:hover img.ref-img {
+            transform: scale(1.1);
+        }
+
+        .logo-container a:hover img {
+            transform: scale(1.05);
+        }
+
+        .envelope-wrapper {
+            width: 100%;
+            height: calc(100vh - 100px);
+            background-image: url('cover.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .video-container {
+            width: 100%;
+            background-color: #000;
+            line-height: 0;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .main-nav {
+                height: auto;
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .logo-container img {
+                height: 80px;
+                margin-bottom: 10px;
+            }
+
+            .nav-list {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+
+            .nav-link img {
+                height: 100px;
+                margin: 0 -5px;
+            }
+
+            .nav-link img.ref-img {
+                width: 80px;
+                padding-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="main-nav">
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="logo.png" alt="Logo">
+            </a>
+        </div>
+
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="editorial.html" class="nav-link">
+                    <img src="Untitled design (3) (5).png" alt="Editorial">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="features.html" class="nav-link">
+                    <img src="Untitled design (3) (6).png" alt="Feature">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="opinion.html" class="nav-link">
+                    <img src="Untitled design (3) (7).png" alt="Opinion">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link">
+                    <img src="about.png" alt="About">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="references.html" class="nav-link">
+                    <img src="ref.png" alt="References" class="ref-img">
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="envelope-wrapper"></div>
+
+    <div class="video-container">
+        <video controls preload="metadata">
+            <source src="vid.mp4" type="video/mp4">
+        </video>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>References - CLProject</title>
+    <style>
+        /* --- GLOBAL & SMOOTH SCROLLING --- */
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f7; 
+            font-family: 'Georgia', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-y: auto; 
+            overflow-x: hidden;
+        }
+
+        /* --- NAVBAR --- */
+        .main-nav {
+            background-color: #cfc4bc; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            width: 100%;
+            justify-content: flex-start; 
+            align-items: center;
+            height: 100px; 
+            box-sizing: border-box;
+            flex-wrap: nowrap;
+        }
+
+        .logo-container { margin-right: 5px; flex-shrink: 0; }
+        .logo-container img { height: 140px; width: auto; display: block; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15)); transition: transform 0.3s ease; }
+        .logo-container a:hover img { transform: scale(1.05); }
+
+        .nav-list { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; flex-wrap: nowrap; }
+        .nav-item { flex-shrink: 0; }
+        
+        .nav-link img { height: 200px; width: auto; display: block; margin: 0 -15px; transition: transform 0.3s ease; }
+
+        /* --- UPDATED REFERENCE IMAGE CONTROL --- */
+        .nav-link img.ref-img {
+            height: auto;
+            width: 145px;
+            margin: 0 10px;
+            padding-bottom: 0px; 
+            transform: none; 
+            transition: transform 0.3s ease;
+        }
+
+        /* Unified hover effect for all buttons */
+        .nav-link:hover img {
+            transform: scale(1.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-link:hover img.ref-img {
+            transform: scale(1.1);
+        }
+
+        /* --- REFERENCES IMAGE STACK --- */
+        .references-container {
+            width: 100%; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .ref-page-img {
+            width: 100%; 
+            height: auto;
+            display: block;
+            margin-bottom: 0;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .main-nav { height: auto; flex-direction: column; padding: 10px; }
+            .logo-container img { height: 80px; margin-bottom: 10px; }
+            .nav-list { flex-wrap: wrap; justify-content: center; gap: 5px; }
+            .nav-link img { height: 100px; margin: 0 -5px; }
+            .nav-link img.ref-img { width: 80px; padding-top: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="main-nav">
+        <div class="logo-container">
+            <a href="index.html"><img src="logo.png" alt="Logo"></a>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item"><a href="editorial.html" class="nav-link"><img src="Untitled design (3) (5).png" alt="Editorial"></a></li>
+            <li class="nav-item"><a href="features.html" class="nav-link"><img src="Untitled design (3) (6).png" alt="Feature"></a></li>
+            <li class="nav-item"><a href="opinion.html" class="nav-link"><img src="Untitled design (3) (7).png" alt="Opinion"></a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link"><img src="about.png" alt="About"></a></li>
+            <li class="nav-item"><a href="references.html" class="nav-link"><img src="ref.png" alt="References" class="ref-img"></a></li>
+        </ul>
+    </nav>
+
+    <div class="references-container">
+        <img src="srs_page-0001.jpg" alt="References Page 1" class="ref-page-img">
+        <img src="srs_page-0002.jpg" alt="References Page 2" class="ref-page-img">
+        <img src="srs_page-0003.jpg" alt="References Page 3" class="ref-page-img">
+        <img src="srs_page-0004.jpg" alt="References Page 4" class="ref-page-img">
+        <img src="srs_page-0005.jpg" alt="References Page 5" class="ref-page-img">
+        <img src="srs_page-0006.jpg" alt="References Page 6" class="ref-page-img">
+        <img src="srs_page-0007.jpg" alt="References Page 7" class="ref-page-img">
+        <img src="srs_page-0008.jpg" alt="References Page 8" class="ref-page-img">
+        <img src="srs_page-0009.jpg" alt="References Page 9" class="ref-page-img">
+        <img src="srs_page-0010.jpg" alt="References Page 10" class="ref-page-img">
+        <img src="srs_page-0011.jpg" alt="References Page 11" class="ref-page-img">
+        <img src="srs_page-0012.jpg" alt="References Page 12" class="ref-page-img">
+        <img src="srs_page-0013.jpg" alt="References Page 13" class="ref-page-img">
+        <img src="srs_page-0014.jpg" alt="References Page 14" class="ref-page-img">
+        <img src="srs_page-0015.jpg" alt="References Page 15" class="ref-page-img">
+        <img src="srs_page-0016.jpg" alt="References Page 16" class="ref-page-img">
+        <img src="srs_page-0017.jpg" alt="References Page 17" class="ref-page-img">
+        <img src="srs_page-0018.jpg" alt="References Page 18" class="ref-page-img">
+        <img src="srs_page-0019.jpg" alt="References Page 19" class="ref-page-img">
+        <img src="srs_page-0020.jpg" alt="References Page 20" class="ref-page-img">
+        <img src="srs_page-0021.jpg" alt="References Page 21" class="ref-page-img">
+        <img src="srs_page-0022.jpg" alt="References Page 22" class="ref-page-img">
+        <img src="srs_page-0023.jpg" alt="References Page 23" class="ref-page-img">
+        <img src="srs_page-0024.jpg" alt="References Page 24" class="ref-page-img">
+    </div>
+
+</body>
+</html>
